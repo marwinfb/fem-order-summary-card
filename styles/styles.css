@@ -1,0 +1,240 @@
+/* Variables
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+:root {
+  --font-primary: "Red Hat Display", sans-serif;
+
+  --color-primary-pale-blue: hsl(225, 100%, 94%);
+  --color-primary-bright-blue: hsl(245, 75%, 52%);
+  --color-neutral-very-pale-blue: hsl(225, 100%, 98%);
+  --color-neutral-desaturated-blue: hsl(224, 23%, 55%);
+  --color-neutral-dark-blue: hsl(223, 47%, 23%);
+
+  --transition: all 0.2s;
+}
+
+/* Base
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--color-primary-pale-blue);
+  color: var(--color-neutral-desaturated-blue);
+  font-family: var(--font-primary);
+  font-size: 1.6em;
+  font-weight: 400;
+  line-height: 1.6;
+  min-height: 100vh;
+
+  background-image: url(/images/pattern-background-desktop.svg);
+  background-repeat: no-repeat;
+  background-position: 0% -25%;
+  background-size: contain;
+}
+
+a {
+  color: #9b4dca;
+  text-decoration: none;
+}
+
+a:focus,
+a:hover {
+  color: #606c76;
+}
+
+ul {
+  list-style: none;
+  margin-top: 0;
+  padding-left: 0;
+}
+
+p {
+  margin-top: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 900;
+  font-family: var(--font-primary);
+  margin-top: 0;
+}
+
+/* Utilities
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+.container {
+  position: relative;
+  margin: 0 auto;
+  max-width: 114rem;
+  padding: 2.4rem;
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Card
+  –––––––––––––––––––––––––––––––––––––––––––––––––– */
+.card {
+  background-color: #fff;
+  border-radius: 2rem;
+  width: 45rem;
+  overflow: hidden;
+  box-shadow: 0 40px 40px -20px hsla(228, 87%, 39%, 0.15);
+}
+
+.card__content {
+  padding: 4.5rem 4.8rem 4.8rem;
+}
+
+.text-wrapper {
+  text-align: center;
+}
+
+.headline {
+  font-size: 2.8rem;
+  font-weight: 900;
+  color: var(--color-neutral-dark-blue);
+  line-height: 3.7rem;
+  margin-bottom: 1.7rem;
+}
+
+.description {
+  font-weight: 500;
+  line-height: 2.6rem;
+  color: var(--color-neutral-desaturated-blue);
+}
+
+.plan-wrapper {
+  background-color: var(--color-neutral-very-pale-blue);
+  border-radius: 1.1rem;
+  padding: 2.5rem 2.4rem;
+  margin: 2rem 0 3.2rem;
+
+  display: flex;
+  align-items: center;
+}
+
+.icon {
+  width: 4.8rem;
+  height: 4.8rem;
+}
+
+.info {
+  margin-left: 2rem;
+}
+
+.info .type {
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: var(--color-neutral-dark-blue);
+}
+
+.button {
+  display: inline-block;
+  font-size: 1.5rem;
+  text-align: center;
+  font-weight: 900;
+  color: #fff;
+}
+
+.button--underline {
+  margin-left: auto;
+  color: var(--color-primary-bright-blue);
+  font-weight: 700;
+  font-size: 1.4rem;
+  text-decoration: underline;
+  transition: var(--transition);
+}
+
+.button--underline:hover,
+.button--underline:focus {
+  text-decoration: none;
+  color: hsla(245, 83%, 68%, 1);
+}
+
+.btn-wrapper {
+  text-align: center;
+}
+
+.button--full {
+  background-color: var(--color-primary-bright-blue);
+  border-radius: 1.1rem;
+  color: #fff;
+  margin-bottom: 3.2rem;
+  padding: 1.5rem 0;
+  width: 100%;
+  box-shadow: 0 20px 20px 0 hsla(245, 75%, 52%, 0.19);
+  transition: var(--transition);
+}
+
+.button--full:hover,
+.button--full:focus {
+  color: #fff;
+  background-color: hsla(245, 83%, 68%, 1);
+}
+
+.button--clear {
+  color: var(--color-neutral-desaturated-blue);
+  transition: var(--transition);
+}
+
+.button--clear:hover,
+.button--clear:focus {
+  color: var(--color-neutral-dark-blue);
+}
+
+@media (max-width: 425px) {
+  body {
+    background-image: url(/images/pattern-background-mobile.svg);
+    background-position: 0% 0%;
+  }
+
+  .icon {
+    width: 4rem;
+    height: 4rem;
+  }
+
+  .card__content {
+    padding: 3.2rem 2.4rem;
+  }
+
+  .plan-wrapper {
+    /* flex-direction: column; */
+    /* text-align: center; */
+    padding: 1.6rem;
+    margin: 2.4rem 0;
+  }
+
+  .button--underline {
+    /* margin-left: 0; */
+  }
+
+  .button--full {
+    margin-bottom: 2.4rem;
+  }
+
+  .headline {
+    font-size: 2.2rem;
+  }
+
+  .description {
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+  }
+
+  .info .type,
+  .info .rate {
+    margin-bottom: 0;
+    font-size: 1.4rem;
+  }
+}
